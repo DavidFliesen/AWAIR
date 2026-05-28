@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  <a href="https://davidfliesen.github.io/awair/awair-v001.html">
+  <a href="https://davidfliesen.github.io/AWAIR/">
     <img src="https://img.shields.io/badge/▶%20LAUNCH%20AWAIR-Live%20Demo-f5c842?style=for-the-badge&labelColor=040d1a" alt="Launch AWAIR"/>
   </a>
   &nbsp;
@@ -42,6 +42,14 @@ Configure a personal watchlist of key AI leaders, monitor curated sources rangin
 
 AWAIR is a single-file HTML application. No build tools, no dependencies, no server required.
 
+### ▶ Run in Browser (Live Demo)
+
+**[→ Launch AWAIR](https://davidfliesen.github.io/AWAIR/)**
+
+Open the link above to run AWAIR instantly — no installation needed.
+
+-----
+
 ### Run Locally
 
 ```bash
@@ -58,7 +66,7 @@ That’s it. The app runs entirely in your browser.
 1. Fork this repository
 1. Go to **Settings → Pages**
 1. Set source to `main` branch, root directory
-1. Your AWAIR instance will be live at `https://yourusername.github.io/awair/`
+1. Your AWAIR instance will be live at `https://yourusername.github.io/AWAIR/`
 
 -----
 
@@ -134,11 +142,11 @@ Add any keyword from the **Watchlist** tab and it will be scanned in every repor
 ## 🗂 App Structure
 
 ```
-awair-v001.html        ← Complete single-file application
+awair-v001.html        ← Complete single-file application (open to run)
 README.md              ← This file
 LICENSE                ← MIT License
 assets/
-  awair-logo.svg       ← Standalone logo asset
+  awair-logo.svg       ← Standalone logo asset (also used in this README)
 ```
 
 -----
@@ -186,7 +194,7 @@ Planned features for future versions:
 
 ## 📄 License
 
-MIT License — free to use, modify, and distribute. See [`LICENSE`](LICENSE) for details.
+MIT License — free to use, modify, and distribute. See [`LICENSE`](LICENSE.md) for details.
 
 -----
 

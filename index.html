@@ -308,64 +308,104 @@
     border-radius: 12px; margin-bottom: 24px;
     align-items: center;
   }
+
+  /* ── REPORT OUTPUT — light reading surface ── */
   .report-output {
-    background: var(--bg-panel);
-    border: 1px solid var(--border);
+    background: #f4f6f9;
+    border: 1px solid #c8d4e0;
     border-radius: 12px;
-    padding: 28px 32px;
+    padding: 36px 40px;
     min-height: 300px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.25);
   }
   .report-header-bar {
     display: flex; justify-content: space-between; align-items: center;
-    padding-bottom: 20px; margin-bottom: 24px;
-    border-bottom: 1px solid var(--border-gold);
+    padding-bottom: 20px; margin-bottom: 28px;
+    border-bottom: 3px solid #c97a00;
   }
   .report-title {
     font-family: 'Rajdhani', sans-serif;
-    font-size: 1.5rem; font-weight: 700;
-    letter-spacing: 3px; color: var(--gold);
+    font-size: 1.6rem; font-weight: 700;
+    letter-spacing: 3px; color: #1a2a3a;
   }
   .report-meta {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 0.68rem; color: var(--text-sec);
-    text-align: right;
+    font-size: 0.68rem; color: #4a6480;
+    text-align: right; line-height: 1.7;
   }
-  .report-section { margin-bottom: 28px; }
+  .report-section { margin-bottom: 32px; }
   .report-sec-title {
     font-family: 'Rajdhani', sans-serif;
-    font-size: 0.85rem; font-weight: 600;
-    letter-spacing: 2.5px; text-transform: uppercase;
-    color: var(--cyan); margin-bottom: 14px;
-    display: flex; align-items: center; gap: 8px;
+    font-size: 0.82rem; font-weight: 700;
+    letter-spacing: 3px; text-transform: uppercase;
+    color: #0077aa; margin-bottom: 14px;
+    display: flex; align-items: center; gap: 10px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #c8d4e0;
   }
-  .report-sec-title::before { content: ''; display: block; width: 24px; height: 1px; background: var(--cyan); }
+  .report-sec-title::before { content: ''; display: block; width: 20px; height: 2px; background: #0077aa; flex-shrink:0; }
+  .report-priority-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.62rem; letter-spacing: 2px;
+    color: #6a8aaa; margin: 14px 0 8px; text-transform: uppercase;
+  }
   .report-item {
-    padding: 14px 16px;
-    background: var(--bg-card);
-    border: 1px solid var(--border);
+    padding: 16px 18px;
+    background: #ffffff;
+    border: 1px solid #dde6ef;
     border-radius: 8px; margin-bottom: 10px;
-    border-left: 3px solid var(--gold);
+    border-left: 4px solid #c97a00;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    transition: box-shadow 0.2s;
   }
+  .report-item:hover { box-shadow: 0 3px 12px rgba(0,0,0,0.1); }
   .report-item-head {
     display: flex; justify-content: space-between; align-items: flex-start;
-    margin-bottom: 6px;
+    margin-bottom: 7px;
   }
   .report-item-name {
     font-family: 'Rajdhani', sans-serif;
-    font-size: 0.92rem; font-weight: 600;
+    font-size: 1rem; font-weight: 700;
+    color: #1a2a3a;
+  }
+  .report-item-role {
+    font-family: 'Exo 2', sans-serif;
+    font-size: 0.78rem; font-weight: 400;
+    color: #5a7a9a; margin-left: 6px;
   }
   .report-item-date {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 0.65rem; color: var(--text-sec);
+    font-size: 0.65rem; color: #7a9ab4;
+    white-space: nowrap; margin-left: 12px; flex-shrink: 0;
   }
-  .report-item-text { font-size: 0.82rem; color: var(--text-sec); line-height: 1.6; }
-  .report-item-tags { display: flex; gap: 6px; margin-top: 8px; flex-wrap: wrap; }
+  .report-item-text {
+    font-family: 'Exo 2', sans-serif;
+    font-size: 0.88rem; color: #2c3e50;
+    line-height: 1.7;
+  }
+  .report-item-tags { display: flex; gap: 6px; margin-top: 10px; flex-wrap: wrap; }
   .rtag {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 0.62rem; padding: 2px 7px;
-    border-radius: 3px;
-    background: rgba(0,212,255,0.08);
-    color: var(--cyan-dim); border: 1px solid rgba(0,212,255,0.15);
+    font-size: 0.6rem; padding: 2px 8px;
+    border-radius: 4px;
+    background: #e8f0f8;
+    color: #2a6090;
+    border: 1px solid #b8cfe8;
+    cursor: default;
+  }
+  .rtag-source { background: #e6f4f0; color: #1a7a5a; border-color: #a8d8c8; }
+  .rtag-kw     { background: #eef5e8; color: #3a6a1a; border-color: #b8d8a8; }
+  .rtag-link   { background: #fff3e0; color: #a05000; border-color: #f0c880; cursor: pointer; }
+  .rtag-link:hover { background: #ffe0b2; }
+  .report-footer-bar {
+    margin-top: 32px; padding-top: 18px;
+    border-top: 1px solid #c8d4e0;
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 10px;
+  }
+  .report-footer-text {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.62rem; color: #8aa4be; letter-spacing: 1px;
   }
 
   /* ── SCHEDULE ── */
@@ -560,7 +600,7 @@
 
     <!-- Report Output -->
     <div class="report-output" id="report-output">
-      <div class="empty-state">
+      <div class="empty-state" style="color:#8aa4be;">
         <div class="empty-icon">📡</div>
         <p>NO REPORT GENERATED YET</p>
         <p style="margin-top:8px;font-size:0.75rem;">CLICK "RUN REPORT NOW" TO SCAN YOUR WATCHLIST AND SOURCES</p>
@@ -1239,12 +1279,12 @@ function renderReport(container) {
     <div class="report-header-bar">
       <div>
         <div class="report-title">AWAIR INTELLIGENCE REPORT</div>
-        <div style="font-family:'JetBrains Mono',monospace;font-size:0.68rem;color:var(--text-sec);margin-top:4px;letter-spacing:2px;">WEEKLY BRIEFING — ${lookback}-DAY SCAN</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:0.68rem;color:#4a6480;margin-top:4px;letter-spacing:2px;">WEEKLY BRIEFING — ${lookback}-DAY SCAN</div>
       </div>
       <div class="report-meta">
         ${dateStr}<br/>
         GENERATED ${timeStr}<br/>
-        <span style="color:var(--green);">● ${activePeople.length} PEOPLE &nbsp;|&nbsp; ${activeSources.length} SOURCES</span>
+        <span style="color:#1a7a5a;">● ${activePeople.length} PEOPLE &nbsp;|&nbsp; ${activeSources.length} SOURCES</span>
       </div>
     </div>
   `;
@@ -1255,22 +1295,23 @@ function renderReport(container) {
     const group = activePeople.filter(p => p.priority === pri);
     if (!group.length) return;
     const label = { core:'🔴 CORE WATCH', watch:'🟡 EXTENDED WATCH', track:'🟢 TRACKING' }[pri];
-    html += `<div style="font-family:'JetBrains Mono',monospace;font-size:0.65rem;color:var(--text-dim);letter-spacing:2px;margin:12px 0 8px;">${label}</div>`;
+    html += `<div class="report-priority-label">${label}</div>`;
     group.forEach(p => {
       const lines = SAMPLE_HEADLINES[p.name] || ['No notable activity detected this period.'];
       const line = lines[Math.floor(Math.random() * lines.length)];
       const daysAgo = Math.floor(Math.random() * parseInt(lookback)) + 1;
       const sentiment = ['🟢 Positive','⚪ Neutral','🔵 Technical','🟡 Strategic'][Math.floor(Math.random()*4)];
+      const borderColors = { core:'#c97a00', watch:'#0077aa', track:'#1a7a5a' };
       html += `
-        <div class="report-item">
+        <div class="report-item" style="border-left-color:${borderColors[pri]};">
           <div class="report-item-head">
-            <div class="report-item-name">${p.name} <span style="font-weight:400;color:var(--text-sec);font-family:'Exo 2',sans-serif;">(${p.role})</span></div>
+            <div><span class="report-item-name">${p.name}</span><span class="report-item-role">(${p.role})</span></div>
             <div class="report-item-date">${daysAgo}d ago${p.x ? ' · ' + p.x : ''}</div>
           </div>
           <div class="report-item-text">${line}</div>
           <div class="report-item-tags">
             ${state.settings.sentiment !== false ? `<span class="rtag">${sentiment}</span>` : ''}
-            ${p.x  ? `<span class="rtag">𝕏 Twitter</span>` : ''}
+            ${p.x   ? `<span class="rtag">𝕏 Twitter</span>` : ''}
             ${p.web ? `<span class="rtag">Web</span>` : ''}
             <span class="rtag">${pri.toUpperCase()}</span>
           </div>
@@ -1288,15 +1329,15 @@ function renderReport(container) {
     const line = lines ? lines[Math.floor(Math.random()*lines.length)] : 'New content detected — visit source for details.';
     const daysAgo = Math.floor(Math.random() * parseInt(lookback)) + 1;
     html += `
-      <div class="report-item" style="border-left-color:var(--cyan);">
+      <div class="report-item" style="border-left-color:#0077aa;">
         <div class="report-item-head">
-          <div class="report-item-name">${s.icon||'🔗'} ${s.name}</div>
+          <div><span class="report-item-name">${s.icon||'🔗'} ${s.name}</span></div>
           <div class="report-item-date">${daysAgo}d ago</div>
         </div>
         <div class="report-item-text">${line}</div>
         <div class="report-item-tags">
-          <span class="rtag">${s.cat.toUpperCase()}</span>
-          ${state.settings.links !== false ? `<span class="rtag" style="cursor:pointer;" onclick="window.open('${s.url}','_blank')">🔗 OPEN SOURCE</span>` : ''}
+          <span class="rtag rtag-source">${s.cat.toUpperCase()}</span>
+          ${state.settings.links !== false ? `<span class="rtag rtag-link" onclick="window.open('${s.url}','_blank')">🔗 OPEN SOURCE</span>` : ''}
         </div>
       </div>
     `;
@@ -1311,12 +1352,13 @@ function renderReport(container) {
       const lines = KEYWORDS_HITS[kw];
       const line  = lines[Math.floor(Math.random()*lines.length)];
       html += `
-        <div class="report-item" style="border-left-color:var(--green);">
+        <div class="report-item" style="border-left-color:#3a6a1a;">
           <div class="report-item-head">
-            <div class="report-item-name" style="color:var(--green);">🏷 ${kw}</div>
+            <div><span class="report-item-name" style="color:#3a6a1a;">🏷 ${kw}</span></div>
             <div class="report-item-date">TRENDING</div>
           </div>
           <div class="report-item-text">${line}</div>
+          <div class="report-item-tags"><span class="rtag rtag-kw">KEYWORD MATCH</span></div>
         </div>
       `;
     });
@@ -1325,8 +1367,8 @@ function renderReport(container) {
 
   // FOOTER
   html += `
-    <div style="margin-top:28px;padding-top:18px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;">
-      <div style="font-family:'JetBrains Mono',monospace;font-size:0.65rem;color:var(--text-dim);">
+    <div class="report-footer-bar">
+      <div class="report-footer-text">
         AWAIR · AGENTIC WEEKLY AI REPORT · DATA STORED LOCALLY · NO TRACKING
       </div>
       <div style="display:flex;gap:10px;">
